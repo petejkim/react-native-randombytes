@@ -29,11 +29,4 @@ RCT_EXPORT_METHOD(randomBytes:(NSUInteger)length
     return [bytes base64EncodedStringWithOptions:0];
 }
 
-- (NSDictionary *)constantsToExport
-{
-    return @{
-        @"seed": [self randomBytes:4096]
-    };
-};
-
 @end

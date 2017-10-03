@@ -13,8 +13,6 @@ import java.util.HashMap;
 import android.util.Base64;
 
 class RandomBytesModule extends ReactContextBaseJavaModule {
-  private static final String SEED_KEY = "seed";
-
   public RandomBytesModule(ReactApplicationContext reactContext) {
     super(reactContext);
   }
@@ -27,13 +25,6 @@ class RandomBytesModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void randomBytes(int size, Callback success) {
     success.invoke(null, getRandomBytes(size));
-  }
-
-  @Override
-  public Map<String, Object> getConstants() {
-    final Map<String, Object> constants = new HashMap<>();
-    constants.put(SEED_KEY, getRandomBytes(4096));
-    return constants;
   }
 
   private String getRandomBytes(int size) {

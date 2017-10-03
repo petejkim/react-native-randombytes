@@ -6,8 +6,7 @@
 var randomBytes = require('react-native-randombytes')
 
 // synchronous API
-// uses SJCL
-var rand = randomBytes(4)
+// not supported
 
 // asynchronous API
 // uses iOS-side SecRandomCopyBytes
